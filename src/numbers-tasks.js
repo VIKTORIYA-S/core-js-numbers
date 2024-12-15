@@ -389,7 +389,7 @@ function toFixed(number, fractionDigits) {
  * 12.345, 4   => '12.35'
  */
 function toPrecision(number, precision) {
-  return number.toPrecision([precision]);
+  return number.toPrecision(precision);
 }
 
 /**
@@ -422,7 +422,7 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return Number.isInteger(number);
+  return typeof number === 'number' && Number.isFinite(number);
 }
 
 /**
@@ -451,7 +451,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-  return parseFloat(str);
+  return Number(str);
 }
 
 /**
